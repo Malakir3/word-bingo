@@ -1,16 +1,20 @@
 # ビンゴカードのサイズSを入力(3 <= S <= 1000)
-size = gets.to_i
+size_num = gets.to_i
 
 # ビンゴカードの単語Ai,jをS行*S列入力(1 <= Ai,jの文字数 <= 100)
 card_array = []
-size.times do
-  card_array << gets.chomp
+size_num.times do
+  row_array = []
+  
+  row_array << gets.chomp
+  card_array << row_array
 end
 
 # 選ばれる単語の個数Nを入力(1 <= N <= 2000)
 number = gets.to_i
 
 # 単語wiをN個入力(1 <= wiの文字数 <= 100)
+chosen_array = []
 number.times do
   chosen_array << gets.chomp
 end
