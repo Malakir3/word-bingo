@@ -4,9 +4,9 @@ size_num = gets.to_i
 # ビンゴカードの単語Ai,jをS行*S列入力(1 <= Ai,jの文字数 <= 100)
 card_array = []
 size_num.times do
-  row_array = []
-  
-  row_array << gets.chomp
+  input = gets.chomp
+  # 入力された単語をスペース毎に区切ってrow_arrayに格納し、さらにcard_arrayに格納
+  row_array = input.split(" ")
   card_array << row_array
 end
 
