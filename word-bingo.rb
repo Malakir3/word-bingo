@@ -19,6 +19,15 @@ try_num.times do
   chosen_ary << gets.chomp
 end
 
-# カードの単語と選ばれた単語との判定
+# card_aryの各単語について、chosen_aryの要素のいずれかと一致していれば、該当するcard_aryの単語を"Y"に置き換える
+# +++この工程、重複してチェックする事になっているので、無駄が結構あるかも+++
+card_ary.each do |card_row|
+  card_row.each_with_index do |card_word, i|
+    if chosen_ary.include?("#{card_word}")
+      card_row[i] = "A"
+    end
+  end
+end
 
+puts card_ary
 # 結果をyes, noで出力
