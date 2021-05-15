@@ -20,14 +20,26 @@ try_num.times do
 end
 
 # card_aryの各単語について、chosen_aryの要素のいずれかと一致していれば、該当するcard_aryの単語を"Y"に置き換える
-# +++この工程、重複してチェックする事になっているので、無駄が結構あるかも+++
+# +++この工程、重複してチェックする事になっているので、無駄が結構あるかも。mapというメソッド使うといいかも？+++
 card_ary.each do |card_row|
   card_row.each_with_index do |card_word, i|
     if chosen_ary.include?("#{card_word}")
-      card_row[i] = "A"
+      card_row[i] = "Y"
     end
   end
 end
 
-puts card_ary
+# 文字Yが一列に揃ってビンゴしているかを、縦・横・斜め毎に判定する
+# 縦の判定
+  size_num.times do |j|
+    judge_ary = []
+    size_num.times do |i|
+      judge_ary << card_ary[i][j]
+    end
+    return puts "yes" if judge_ary.all?{ |judge_word| judge_word == "Y" }
+  end
+# 横の判定
+# 斜めの判定
+
 # 結果をyes, noで出力
+puts "no"
