@@ -38,11 +38,16 @@ size_num.times do |j|
   end
   return puts "yes" if judge_ary.all?{ |judge_word| judge_word == "Y" }
 end
+
 # 横の判定
 card_ary.each do |card_row|
   return puts "yes" if card_row.all?{ |judge_word| judge_word == "Y" }
 end
-# 斜めの判定
+
+# 斜め(バックスラッシュ"\"の方向)の判定
+
+
+# 斜め(スラッシュ"/"の方向)の判定
 
 # 結果をyes, noで出力
 puts "no"
