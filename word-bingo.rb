@@ -52,6 +52,11 @@ end
 return puts "yes" if backslash_judge_ary.all?{ |judge_word| judge_word == "Y" }
 
 # 斜め(スラッシュ"/"の方向)の判定
+slash_judge_ary = []
+card_ary.each_with_index do |card_row, i|
+  slash_judge_ary << card_row[size_num - (i + 1)]
+end
+return puts "yes" if slash_judge_ary.all?{ |judge_word| judge_word == "Y" }
 
 # 結果をyes, noで出力
 puts "no"
