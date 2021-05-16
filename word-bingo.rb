@@ -45,7 +45,11 @@ card_ary.each do |card_row|
 end
 
 # 斜め(バックスラッシュ"\"の方向)の判定
-
+backslash_judge_ary = []
+card_ary.each_with_index do |card_row, i|
+  backslash_judge_ary << card_row[i]
+end
+return puts "yes" if backslash_judge_ary.all?{ |judge_word| judge_word == "Y" }
 
 # 斜め(スラッシュ"/"の方向)の判定
 
